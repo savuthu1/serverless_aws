@@ -9,7 +9,7 @@ module.exports.auth = (event, context, callback) => {
         {
           Action: "execute-api:Invoke",
           Effect: "Allow",
-          Resource: "arn:aws:execute-api:us-west-1:867137601660:bbzthdji19/*/*"
+          Resource: "arn:aws:execute-api:us-west-1:867137601660:252uf3kwu3/*/*"
         }
       ]
     }
