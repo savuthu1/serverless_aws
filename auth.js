@@ -1,8 +1,9 @@
 "use strict";
+const uuidv4 = require("uuid/v4");
 
 module.exports.auth = (event, context, callback) => {
   const policy = {
-    principalId: "55",
+    principalId: uuidv4(),
     policyDocument: {
       Version: "2012-10-17",
       Statement: [
@@ -14,6 +15,6 @@ module.exports.auth = (event, context, callback) => {
       ]
     }
   };
-  console.log(event);
+  console.log(event, context);
   return callback(null, policy);
 };

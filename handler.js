@@ -1,5 +1,6 @@
 "use strict";
 var AWS = require("aws-sdk");
+const uuidv4 = require("uuid/v4");
 
 var ddb = new AWS.DynamoDB.DocumentClient();
 
@@ -21,13 +22,13 @@ module.exports.hello = (event, context, callback) => {
       return callback({ statusCode: 200, body: JSON.stringify({ err }) });
     } else {
       console.log("RRRRR");
-      console.log(data);
+      console.log(uuidv4());
       // return { statusCode: 200, body: JSON.stringify({ data }) };
       // return 'free'
       return callback(null, {
         statusCode: 200,
         body: JSON.stringify({
-          message: "Go Serverless v1.0! Your function executed successfu",
+          message: uuidv4(),
           input: event
         })
       });
